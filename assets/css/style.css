@@ -1,0 +1,266 @@
+/* Reset some default styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f9fafb;
+    color: #2b2d42;
+    line-height: 1.6;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Container for page layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #3a86ff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+p, span, a {
+    font-weight: 400;
+    color: #2b2d42;
+}
+
+/* Links */
+a {
+    color: #3a86ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+    color: #265cbf;
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.6rem 1.25rem;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #3a86ff;
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #265cbf;
+    outline: none;
+}
+
+.btn-outline-light {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    background-color: #fff;
+    color: #3a86ff;
+    outline: none;
+}
+
+/* Headings for hero */
+.text-3d {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow:
+        1px 1px 0 #000,
+        2px 2px 0 #3a86ff,
+        3px 3px 5px rgba(0,0,0,0.7);
+    margin-bottom: 1rem;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('../images/gym-bg.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #eee;
+    margin-bottom: 2rem;
+}
+
+/* Navigation */
+.site-header {
+    background-color: #2b2d42;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: #3a86ff;
+}
+
+.logo img {
+    vertical-align: middle;
+    height: 40px;
+}
+
+/* Accessibility: Skip Navigation Link */
+.skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #3a86ff;
+    color: white;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+
+.skip-nav:focus {
+    top: 0;
+}
+
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.schedule-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(58, 134, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.schedule-card:hover {
+    box-shadow: 0 4px 12px rgba(58, 134, 255, 0.2);
+}
+
+.schedule-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Counter Section */
+.counter-section {
+    padding: 3rem 1rem;
+    background-color: #2b2d42;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.counter-item {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.counter-item span {
+    display: block;
+}
+
+.counter-item .counter {
+    font-size: 3.5rem;
+    color: #3a86ff;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.py-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .main-nav li {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .counter-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
